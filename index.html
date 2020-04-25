@@ -1,0 +1,100 @@
+<html>
+
+<head>
+    <script src="dist/branching.js"></script>
+
+    <style>
+        branching-chart,
+        branching-chart-element {
+            display: block;
+        }
+
+        branching-chart-element {
+            margin-bottom: 3px;
+        }
+
+        branching-chart-element-label {
+            margin-left: 6px;
+        }
+
+        branching-chart legend {
+            margin-top: 6px;
+            color: gray;
+        }
+
+        branching-chart-branch {
+            margin-right: 3px;
+            padding-right: 6px;
+            border-right: solid 2px lightgray;
+        }
+
+        branching-chart-branch.hidden {
+            border-right: solid 2px transparent;
+        }
+
+        branching-chart-branch.active {
+            border-right: solid 2px darkgray;
+        }
+
+        branching-chart-branch.current {
+            border-right: solid 2px black;
+        }
+
+        branching-chart-branch.starting {
+            border-top: solid 2px black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Branching test</h1>
+    <div id="branching"></div>
+    <script>
+        let branchingContainer = document.getElementById('branching')
+        branchingContainer.appendChild(generateBranchingChart(
+            [
+                {
+                    label: "root",
+                    from: undefined
+                }, {
+                    label: "fix1",
+                    from: "root"
+                }, {
+                    label: "fix2",
+                    from: "root"
+                }
+            ],
+            [
+                {
+                    branch: "root",
+                    label: "Element 1"
+                },
+                {
+                    branch: "root",
+                    label: "Element 2"
+                },
+                {
+                    branch: "fix1",
+                    label: "Element fix 1"
+                },
+                {
+                    branch: "root",
+                    label: "Element 3"
+                },
+                {
+                    branch: "fix1",
+                    label: "Element fix 1"
+                },
+                {
+                    branch: "fix2",
+                    label: "Element fix 2"
+                }
+            ],
+            {
+                useDivOnly: false
+            }
+        ))
+    </script>
+</body>
+
+</html>
