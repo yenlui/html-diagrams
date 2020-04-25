@@ -7,7 +7,7 @@
     "start": "tsc --watch",
     "ci": "echo \"ci\"",
     "build": "tsc",
-    "test": "exho \"test\""
+    "test": "echo \"test\""
   },
   "author": "yenlui",
   "license": "ISC",
