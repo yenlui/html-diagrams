@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsc --watch"
+    "start": "tsc --watch",
+    "ci": "echo \"ci\"",
+    "build": "tsc",
+    "test": "exho \"test\""
   },
   "author": "yenlui",
   "license": "ISC",
